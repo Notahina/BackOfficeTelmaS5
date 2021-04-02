@@ -1,0 +1,41 @@
+<div class="grid-container">
+    
+        
+    <div class="one">
+        <app-profil></app-profil>
+    </div>
+    <div class="two-grid">
+        <div class="stat" id="#depot">
+            <div class="valide">
+                <div class="container">
+                    <input type="button" class='button1' value='Tout valider' (click)="Valider('-1')"> 
+                    <table class="zui-table">
+                        <thead>
+                            <tr>
+                                <th>Reference</th>
+                                <th>Date</th>
+                                <th>Numero</th>
+                                <th>Montant</th>
+                                <th></th>                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr *ngFor="let row of tablerow">
+                                <td>#{{ row["id_mouvement"] }}</td>
+                                <td>{{ row["date_transaction"] }}</td>
+                                <td>{{ row["telephone"] }}</td>
+                                <td>{{ row["montant"] }} Ariary</td>
+                                <td><input type="button" class='button' value='valider' (click)="Valider(row['id_mouvement'])" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div *ngIf="erreur!==''" class="error">
+                        {{erreur}}
+                    </div>
+                  </div>
+            </div>
+        </div>    
+    </div>
+    
+</div>

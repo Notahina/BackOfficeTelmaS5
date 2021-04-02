@@ -1,0 +1,65 @@
+<div class="grid-container">
+    
+        
+    <div class="one">
+        <app-profil></app-profil>
+    </div>
+    <div class="two-grid">
+        
+        <div class="stat">
+            <h4>Tableau Statistique Offre</h4>
+            <div class="voir-date-mois">
+                <form (ngSubmit)="getOffreDonne(form)"  #form="ngForm"novalidate>
+                    <label>
+                        Date début:
+                    </label>
+                    <input type="date" name="date" ngModel required>
+                    <label>
+                        Offre
+                    </label>                    
+                        <select name="listeoffre" ngModel required>
+                            <option [value]=0>TOUS</option>
+                            <option *ngFor="let liste of listes"  [value]="liste['id_offre']">{{ liste["nom_offre"] }}</option>
+                            
+                        </select>
+                    <label>
+                        Afficher en:
+                    </label>
+                        <select name="periode" ngModel required>
+                            <option>Jour</option>
+                            <option>Mois</option>
+                        </select>
+                    
+                    <input type="submit" value="Voir">
+                </form>
+            </div>
+            <div class="chart">
+               <canvas id="Chart"></canvas>
+            </div>   
+		
+        <div class="hr"></div>
+        <div class="tableau-statistique">
+            <table class="zui-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Offre</th>
+                        <th>Nombre</th>                          
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let row of tabledash">
+                        <td>#{{ row["dates"] }}</td>
+                        <td>{{ row["nom_offre"] }}</td>
+                        <td>{{ row["valeur"] }}</td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="hr"></div>
+		</div>
+    </div>
+</div>
+
+  

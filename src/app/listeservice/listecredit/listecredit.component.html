@@ -1,0 +1,17 @@
+<h3>LISTE CREDIT UTILISABLE</h3>
+<table class="zui-table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Code</th>
+            <th>Montant</th>  
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of credit;index as i">
+            <td>{{i+1}}</td>
+            <td>{{row["code"]}}</td>
+            <td>{{row["montant"]}} Ariary</td>
+        </tr>
+    </tbody>
+ </table>

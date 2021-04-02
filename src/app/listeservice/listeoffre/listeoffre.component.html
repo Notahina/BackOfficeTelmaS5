@@ -1,0 +1,22 @@
+<h3>LISTE OFFRE</h3>
+<table class="zui-table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Date ajout</th>
+            <th>Nom offre</th>   
+            <th>Validite</th>
+            <th>Prix</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of listeoffre;index as i">
+            <td>{{i+1}}</td>
+            <td>{{row["date_offre"]}}</td>
+            <td>{{row["nom_offre"]}}</td>
+            <td>{{row["validite"]}}</td>
+            <td>{{row["prix_offre"]}}</td>
+        </tr>
+    </tbody>
+ </table>

@@ -1,0 +1,22 @@
+<h3>LISTE OFFRE FORFAIT</h3>
+<table class="zui-table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Nom offre</th>
+            <th>Utilisation</th>   
+            <th>Valeur</th>
+            <th></th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of forfait ;index as i">
+            <td>{{i+1}}</td>
+            <td>{{row["nom_offre"]}}</td>
+            <td>{{row["nom_utilisation"]}}</td>
+            <td>{{row["valeur"]}}</td>
+            <td>{{row["unite"]}}</td>
+        </tr>
+    </tbody>
+ </table>

@@ -1,0 +1,239 @@
+<div class="grid-container">
+    
+        
+    <div class="one">
+        <app-profil></app-profil>
+    </div>
+    <div class="two-grid">
+        <!-- <div class="menu">
+            <ul>
+                <li><a href="service/#sms">Générer un credit</a></li>
+                <li><a href="service/#offre">Ajouter Offre</a></li>
+                
+              </ul>
+        </div>
+        <div class="contenu"> -->
+            <!-- <div class="valide">
+                <div class="hr"></div>
+                <div id="appel" class="ajouter">
+                    <h3>GENERE DU CREDIT</h3>
+                    <form (ngSubmit)="GenerateCredit(credit)"  #credit="ngForm"novalidate>
+                        <div class="form-offre">
+                            <label for="name">Montant:</label>
+                            <input type="number" id="name" name="montant" placeholder="  ex:10 000 Ar" ngModel>
+                        </div>
+                        <div *ngIf="ErrorMessage1!==''" class="error">
+                            {{ErrorMessage1}}
+                        </div>
+                        <div class="form-bouton">
+                            <input type="submit" value="Generer">
+                        </div>
+                       
+                    </form>
+                </div>
+        
+        -->
+        <!--------------------AJOUT OFFRE-----------------> 
+                <!-- <div class="hr"></div>
+                <div id="offre" class="ajouter">
+                    <h3>AJOUTER UNE OFFRE</h3>
+                    <form (ngSubmit)="InsertOffre(form)"  #form="ngForm"novalidate>
+                        <div class="form-offre">
+                            <label for="name">Nom offre:</label>
+                            <input type="text" id="name" name="nom_offre" placeholder="  ex:Telma mora" ngModel required> 
+                        </div>
+                        <div class="form-offre">
+                        </div>
+                        <div class="form-offre">
+                            <label for="name">Validite:</label>
+                            <input type="text" id="name" name="validite" placeholder="  Jour" ngModel required> 
+                        </div>
+                        <div class="form-offre">
+                            <label for="name">Prix:</label>
+                            <input type="text" id="name" name="prix" placeholder="  Ariary" ngModel required>
+                        </div>
+                        <div *ngIf="ErrorMessage!==''" class="error">
+                            {{ErrorMessage}}
+                        </div>
+                        <div class="form-bouton">
+                            <input type="submit" value="Valider">
+                        </div>
+                    </form>
+                </div>
+             Ajouter Forfait offre 
+            <div class="hr"></div>
+            <div id="forfaitoffre" class="ajouter">
+                <h3>AJOUTER LE FORFAIT DE L'OFFRE</h3>
+                <div class="form-offre">
+                    <label for="name">Nom offre:
+                    <select style="width: 150px;">
+                        <option *ngFor="let row of listeoffre">{{row["nom_offre"]}}</option>
+                    </select>
+                    </label>
+                </div>
+                <div class="form-offre">
+                    <label for="name">Utilisation:
+                    <select style="width: 150px;">
+                        <option *ngFor="let row of liste">{{row["nom_utilisation"]}}</option>
+                    </select>
+                    </label>
+                </div>
+                <div class="form-offre">
+                    <label>Valeur:</label>
+                    <input type="text" id="name" name="valeur" placeholder="" ngModel required>
+                </div>
+                <div class="form-bouton">
+                    <input type="submit" value="Ajouter">
+                    <input type="submit" value="Valider">
+                </div>
+            </div>
+             ---------Liste Offre -->
+                <!-- <div class="hr"></div>
+                <div>
+                    <h3>LISTE OFFRE</h3>
+                    <table>
+                        <tr>
+                            <th>Nom offre</th>
+                            <th>Date ajout</th>
+                            <th>Validite</th>
+                            <th>Prix</th>
+                            <th></th>
+                        </tr>
+                        <tr *ngFor="let row of listeoffre">
+                            <td>{{row["nom_offre"]}}</td>
+                            <td>{{row["date_offre"]}}</td>
+                            <td>{{row["validite"]}}</td>
+                            <td>{{row["prix_offre"]}}</td>
+                            <td><button>Ajouter</button></td>
+                        </tr>
+                    </table>
+                </div> -->
+            <!-- </div> -->
+            
+        <!-- </div> -->
+            <div>
+                <nav >
+
+                    <label for="touch"><span>Liste</span></label>               
+                    <input type="checkbox" id="touch"> 
+                
+                    <ul class="slide">
+                    <li (click)="showDiv(1)">Offre</li> 
+                    <li (click)="showDiv(2)">Forfait</li>
+                    <li (click)="showDiv(3)">Liste credit</li>
+    
+                    </ul>
+                
+                </nav> 
+            <!-- </div>
+            <div> -->
+                <nav>
+                    <label for="touch1"><span>Saisie</span></label>               
+                    <input type="checkbox" id="touch1">     
+                    <ul class="slide">
+                    <li (click)="showDiv(4)">Offre</li> 
+                    <li (click)="showDiv(5)">Forfait</li>
+                    <li (click)="showDiv(6)">Genere credit</li>
+                    </ul>
+                </nav> 
+            </div>
+            
+            <div *ngIf="div1" >
+                <app-listeoffre></app-listeoffre>
+            </div>
+            <div *ngIf="div2">
+                <app-listeforfait></app-listeforfait>
+            </div>
+            <div *ngIf="div3">
+                <app-listecredit></app-listecredit>
+            </div>
+            <!-- Ajouter OFFRE -->
+            <div *ngIf="div4">
+                <h3>AJOUTER UNE OFFRE</h3>
+                <form (ngSubmit)="InsertOffre(form)"  #form="ngForm"novalidate>
+                    <div class="form-offre">
+                        <label for="name">Nom offre:</label>
+                        <input type="text" id="name" name="nom_offre" placeholder="  ex:Telma mora" ngModel required> 
+                    </div>
+                    <div class="form-offre">
+                    </div>
+                    <div class="form-offre">
+                        <label for="name">Validite:</label>
+                        <input type="text" id="name" name="validite" placeholder="  Jour" ngModel required> 
+                    </div>
+                    <div class="form-offre">
+                        <label for="name">Prix:</label>
+                        <input type="text" id="name" name="prix" placeholder="  Ariary" ngModel required>
+                    </div>
+                    <div *ngIf="ErrorMessage!==''" class="error">
+                        {{ErrorMessage}}
+                    </div>
+                    <div class="form-bouton">
+                        <input type="submit" value="Valider">
+                    </div>
+                </form>
+            </div>
+            <!-- Add forfait -->
+            <div *ngIf="div5" class="">
+                <h3>Ajouter Forfait Offre</h3>
+                <div class="form-offre">
+                    <label for="offres">Offre:</label>
+                    <select id="offres" name="offre" class="selectsaisie" #offre>
+                        <option  *ngFor="let row of listeoffre"checked value="{{row['id_offre']}}">{{row["nom_offre"]}}</option>
+                    </select>
+                </div>
+                <div class="form-offre">
+                    <label for="utilisation">Utilisation:</label>
+                    <select id="utilisation" class="selectsaisie" name="utilisation" #utilisation>
+                        <option *ngFor="let row of liste" value="{{row['id_utilisation']}}">{{row["nom_utilisation"]}}</option>
+                    </select>
+                </div>
+                <div class="form-offre">
+                    <label for="valeur">Quantite:</label>
+                    <input style="text-align: center;" placeholder="Ar  Sms   Mo" name="valeur" #valeur> 
+                </div>
+                <button type="button"  (click)="addUtilisation(offre.value,utilisation.value,valeur.value)">Ajouter</button>
+                <div class="drownnav2">            
+                    <table  style="width: 100%;">
+                            <tr>
+                                <th>#</th>
+                                <th>id Offre</th>   
+                                <th>id Utilisation</th>
+                                <th>Quantite</th>
+                                <th>Supprimer</th>   
+                            </tr>
+                            <tr *ngFor="let row of arrayForfait; index as i" style="text-align: center;" >
+                                
+                                <td><input type="hidden" name="ind" value="{{i}}" #ind> {{i+1}}</td>
+                                <td>{{row.id_offre}}</td>
+                                <td>{{row.id_utilisation}}</td>
+                                <td>{{row.valeur}}</td>
+                                <td (click)="deleteUtilisation(ind.value)">Supprimer</td>
+                            </tr>
+                    </table>
+                </div>
+                <button type="button" (click)="ValiderForfait()">Valider</button>
+            </div>
+            <!-- Genereta credit -->
+            <div *ngIf="div6">
+                <h3>GENERE DU CREDIT</h3>
+                    <form (ngSubmit)="GenerateCredit(credit)"  #credit="ngForm"novalidate>
+                        <div class="form-offre">
+                            <label for="name">Montant:</label>
+                            <input type="number" id="name" name="montant" placeholder="  ex:10 000 Ar" ngModel>
+                        </div>
+                        <div *ngIf="ErrorMessage1!==''" class="error">
+                            {{ErrorMessage1}}
+                        </div>
+                        <div class="form-bouton">
+                            <input type="submit" value="Generer">
+                        </div>
+                       
+                    </form>
+            </div>
+            <!-- <div *ngIf="div1">
+                okokok
+            </div> --> 
+    </div>
+
+</div>
